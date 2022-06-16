@@ -1,23 +1,46 @@
 <html>
   <head>
     <title>HouseTourVR</title>
-    <style>body { margin: 0; }</style>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="./index.css" />
+
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, user-scalable=no"
+    />
   </head>
   <body>
     <!-- Attachment point for your app -->
-    <div id="container"></div>
+    <div id="container">
+      <div id="home">
+        <div class="text">
+          <h1>Mayur Desai</h1>
+          <h2>This is my project on mixed reality</h2>
+          <p>
+            This is a model project of a house tour which gives you experience
+            of of 360 degrees view.
+          </p>
+        </div>
+        <div class="image">
+          <img src="./static_assets/images/main-page.png" />
+          <button onClick="enterApp()">Take a tour</button>
+        </div>
+      </div>
+    </div>
     <script src="./client.bundle?platform=vr"></script>
     <script>
-      // Initialize the React 360 application
-      React360.init(
-        'index.bundle?platform=vr&dev=true',
-        document.getElementById('container'),
-        {
-          assetRoot: 'static_assets/',
-        }
-      );
+      function enterApp() {
+        // Initialize the React 360 application
+        React360.init(
+          'index.bundle?platform=vr&dev=true',
+          document.getElementById('container'),
+          {
+            assetRoot: 'static_assets/',
+          }
+        );
+
+        const elem = document.getElementById('home');
+        elem.parentNode.removeChild(elem);
+      }
     </script>
   </body>
 </html>
-

@@ -1,5 +1,5 @@
 import { PICK_ROOM } from './constants';
-
+ 
 const startingRoom = {
   name: 'House For Sale',
   info: `

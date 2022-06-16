@@ -17,7 +17,7 @@ class HousePanel extends React.Component {
       </Provider>
     );
   }
-};
+}
 
 class SelectionPanel extends React.Component {
   render() {
